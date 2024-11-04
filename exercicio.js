@@ -7,7 +7,7 @@ const resposta = document.getElementById('resultadoDaMulti');
 botaoResulatdo === null || botaoResulatdo === void 0 ? void 0 : botaoResulatdo.addEventListener('click', (e) => {
     const valor1 = parseFloat(numero1.value);
     const valor2 = parseFloat(numero2.value);
-    function Multiplicar() {
+    function Multiplicar(valor1, valor2) {
         if (isNaN(valor1) || isNaN(valor2)) {
             resposta === null || resposta === void 0 ? void 0 : resposta.id = 'resultadoDaMulti--is-open';
             resposta === null || resposta === void 0 ? void 0 : resposta.innerHTML = `<p> Não existe valor para ser Multiplicado, Digite 2 números</p>`;
@@ -24,7 +24,7 @@ botaoResulatdo === null || botaoResulatdo === void 0 ? void 0 : botaoResulatdo.a
 const seuNome = document.getElementById('nome');
 const botaoDoNome = document.getElementById('botaoNome');
 const resultadoDoNome = document.getElementById('resultadoDoNome');
-function DizerNome() {
+function DizerNome(nome) {
     botaoDoNome === null || botaoDoNome === void 0 ? void 0 : botaoDoNome.addEventListener('click', (e) => {
         const nome = seuNome.value;
         if (nome == '') {
