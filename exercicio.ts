@@ -4,7 +4,7 @@ const numero2 = document.getElementById('n2') as HTMLInputElement
 const botaoResulatado = document.getElementById('botaoMult')
 const resposta = document.getElementById('resultadoDaMulti')
 
-botaoResulatado?.addEventListener('click', (e: MouseEvent) =>{
+botaoResulatado?.addEventListener('click', () =>{
 
     const valor1 = parseFloat(numero1.value)
     const valor2 = parseFloat(numero2.value)
@@ -31,23 +31,25 @@ const seuNome = document.getElementById('nome') as HTMLInputElement
 const botaoDoNome = document.getElementById('botaoNome')
 const resultadoDoNome = document.getElementById('resultadoDoNome')
 
-botaoDoNome?.addEventListener('click', (e: MouseEvent) => {
+botaoDoNome?.addEventListener('click', () => {
 
-    const nome: string = seuNome.value
-    function DizerNome(nome: string){
+    const nome = seuNome.value.trim();
+
+    function DizerNome(nome: string): void{
   
     
-        if ( nome.trim() === ''){
-            resultadoDoNome?.setAttribute('id ', 'resultadoDaMulti--is-open')
+        if ( nome === ''){
+            resultadoDoNome?.setAttribute('id', 'resultadoDaMulti--is-open')
             resultadoDoNome!.innerHTML = '<p>Digite algo na caixa de texto!</p>'
         } else {
-            resultadoDoNome?.setAttribute('id ', 'resultadoDaMulti--is-open')
+            resultadoDoNome?.setAttribute('id', 'resultadoDaMulti--is-open')
             resultadoDoNome!.innerHTML = `<p>Olá, ${nome}, como vai?</p>`
         }
 
     }
-    DizerNome('nome')
+    DizerNome(nome)
 }) 
 
+/* resultadoDaMulti--is-open */
 
 
